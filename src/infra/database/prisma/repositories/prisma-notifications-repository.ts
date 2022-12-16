@@ -24,7 +24,13 @@ export class PrismaNotificationsRepository implements NotificationsRepository {
     }
 
     async findManyByRecipientById(recipientId: string): Promise<Notification[]> {
-        throw new Error("Method not implemented.");
+        const notifications = await this.prisma.notification.findMany({
+            where: {
+                recipientId,
+            },
+        });
+
+        return notifications.map(PrismaNotificationMapper.toDomain)
     }
 
     async countManyByRecipientById(recipientId: string): Promise<number> {
