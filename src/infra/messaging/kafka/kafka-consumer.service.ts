@@ -7,11 +7,11 @@ export class KafkaConsumerService extends ServerKafka implements OnModuleDestroy
         super({
             client: {
                 clientId: 'notifications',
-                brokers: ['valid-skylark-12205-us1-kafka.upstash.io:9092'],
+                brokers: ['YOUR-BROCKER'],
                 sasl: {
                     mechanism: 'scram-sha-256',
-                    username: 'dmFsaWQtc2t5bGFyay0xMjIwNSTgNcKONnWh4r7rR5Ur6zYzIotokSc_Kadk-sk',
-                    password: 'I3KYlZ69-5vXLET96GmRV5hWvA560gz1gEnEE2JJ6cvawfnWFtnYipGuTCc1D8k5bav-WA=='
+                    username: 'YOUR-USERNAME',
+                    password: 'YOUR-PASSWORD'
                 },
                 ssl: true,
             }

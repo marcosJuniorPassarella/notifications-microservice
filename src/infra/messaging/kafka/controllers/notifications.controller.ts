@@ -14,8 +14,7 @@ export class NotificationsController {
     constructor(private sendNotification: SendNotification) { }
 
     // método chamado toda vez que houver uma nova mensagem dentro do tópico criado no upstach
-    // nome do tópico criado: notifications.send-notification
-    @EventPattern('notifications.send-notification')
+    @EventPattern('YOUR-TOPIC')
     async handleSendNotification(
         @Payload() { content, category, recipientId }: SendNotificationPayload
     ) {
